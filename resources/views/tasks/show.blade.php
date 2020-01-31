@@ -17,5 +17,8 @@
 
  {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $tasks->id], ['class' => 'btn btn-light']) !!}
 
+ {!! Form::model($tasks, ['route' => ['tasks.destroy', $tasks->id], 'method' => 'delete']) !!}
+        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
 
 @endsection
